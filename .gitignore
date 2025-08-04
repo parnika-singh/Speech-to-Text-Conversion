@@ -1,0 +1,18 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+
+#virtual environement
+env/
+
+#environement variables
+.env
+
+#notes file
+asr prompt.txt
+
+#audio file for my local testing
+Testing for asr 1.m4a
+
+# Ignore SQLite database
+db.sqlite3

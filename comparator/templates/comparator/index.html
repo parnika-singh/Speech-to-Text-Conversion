@@ -1,0 +1,41 @@
+{% load static %}
+{% csrf_token %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Speech-to-Text Comparison</title>
+    <style>
+        /* Add some basic styling for the page */
+        body { font-family: sans-serif; margin: 2em; }
+        .container { max-width: 800px; margin: auto; }
+        #recordButton { padding: 1em 2em; font-size: 1em; cursor: pointer; }
+        .results { display: flex; justify-content: space-between; margin-top: 2em; }
+        .result-box { width: 48%; border: 1px solid #ccc; padding: 1em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Whisper vs. Deepgram</h1>
+        <!-- <button id="recordButton">Start Recording</button> -->
+        <input type="file" id="audioFile" accept="audio/*">
+        <button id="uploadButton">Upload & Compare</button>
+        <div class="results">
+            <div class="result-box">
+                <h2>Whisper</h2>
+                <p><strong>Time to first token:</strong> <span id="whisperFirstTokenTime"></span></p>
+                <p><strong>Total time:</strong> <span id="whisperTotalTime"></span></p>
+                <p id="whisperText"></p>
+            </div>
+            <div class="result-box">
+                <h2>Deepgram</h2>
+                <p><strong>Time to first token:</strong> <span id="deepgramFirstTokenTime"></span></p>
+                <p><strong>Total time:</strong> <span id="deepgramTotalTime"></span></p>
+                <p id="deepgramText"></p>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'comparator/js/main.js' %}"></script>
+</body>
+</html>
