@@ -16,3 +16,5 @@ Testing for asr 1.m4a
 
 # Ignore SQLite database
 db.sqlite3
+
+deepgram_test.py

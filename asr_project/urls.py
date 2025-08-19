@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('comparator.urls')),
+    path('comparator/', include('comparator.urls')),
+    path('', include('realtime_comparator.urls'))
 ]

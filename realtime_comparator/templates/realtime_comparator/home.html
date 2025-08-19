@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech-to-Text Analysis Hub</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #f4f7f6; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        h1 { color: #333; margin-bottom: 30px; }
+        .nav-button { display: block; background-color: #007bff; color: white; padding: 15px 30px; margin: 15px auto; border: none; border-radius: 8px; font-size: 18px; text-decoration: none; width: 80%; max-width: 350px; transition: background-color 0.3s, transform 0.2s; }
+        .nav-button:hover { background-color: #0056b3; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Speech-to-Text Analysis Hub</h1>
+        <a href="{% url 'comparator:index' %}" class="nav-button">Pre-recorded Audio Comparison</a>
+        <a href="{% url 'realtime' %}" class="nav-button">Real-time Mic Comparison</a>
+        <a href="{% url 'future' %}" class="nav-button">Future: Faster-Whisper/WhisperX</a>
+        <a href="{% url 'home' %}" class="nav-button">Home</a>
+    </div>
+</body>
+</html>

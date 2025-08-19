@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Speech Comparison</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f0f2f5; }
+        .container { max-width: 1000px; margin: auto; }
+        h1, h2 { color: #333; text-align: center; }
+        #micButton { padding: 1em 2em; font-size: 1.2em; cursor: pointer; display: block; margin: 20px auto; border-radius: 8px; border: none; color: white; background-color: #28a745; transition: background-color 0.3s; }
+        #micButton.recording { background-color: #dc3545; }
+        .results { display: flex; justify-content: space-around; margin-top: 2em; gap: 2em; }
+        .result-box { width: 48%; background: white; border: 1px solid #ccc; padding: 1.5em; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); min-height: 200px; }
+        .result-box h2 { margin-top: 0; }
+        #status { text-align: center; font-style: italic; color: #666; height: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real-time: OpenAI vs. Deepgram</h1>
+        <div id="status">Click "Start Mic" to begin</div>
+        <button id="micButton">Start Mic</button>
+        <div class="results">
+            <div class="result-box">
+                <h2>OpenAI</h2>
+                <p id="openaiText"></p>
+            </div>
+            <div class="result-box">
+                <h2>Deepgram</h2>
+                <p id="deepgramText"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Pass the API key from Django template to JS
+        const DEEPGRAM_API_KEY = "{{ DEEPGRAM_API_KEY }}";
+    </script>
+    <script src="{% static 'js/realtime.js' %}"></script>
+</body>
+</html>
